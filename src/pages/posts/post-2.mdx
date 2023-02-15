@@ -1,0 +1,20 @@
+---
+layout: "../../layouts/MarkdownPostLayout.astro"
+title: My Second Blog Post
+author: Astro Learner
+description: "After learning some Astro, I couldn't stop!"
+image:
+  url: "https://astro.build/assets/blog/astro-showcase/astro-showcase-screenshot.jpg"
+  alt: "Thumbnails of websites from the Astro Showcase site."
+publishedDate: 2022-07-08
+tags: ["astro", "blogging", "learning in public", "successes"]
+---
+
+import Social from "../../components/Social.astro";
+import Greeting from "../../components/Greeting";
+
+After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+
+<Social platform="twitter" username="hey" />
+
+<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
