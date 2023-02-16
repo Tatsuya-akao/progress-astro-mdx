@@ -1,0 +1,25 @@
+---
+import TypeScriptPostLayout from "src/layouts/TypeScriptPostLayout.astro";
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const typescriptEntries = await getCollection("typescript");
+  return typescriptEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const {
+  entry,
+  entry: {
+    data: { title, publishedAt },
+  },
+} = Astro.props;
+const { Content } = await entry.render();
+---
+
+<TypeScriptPostLayout title={title}>
+  <h1>{title}</h1>
+  <p>{publishedAt}</p>
+  <Content />
+</TypeScriptPostLayout>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+const allTypeScriptPosts = await getCollection("typescript");
+import tsLogo from "@img/logo-ts.svg";
+import { Image } from "@astrojs/image/components";
+console.log(allTypeScriptPosts);
+---
+
+<BaseLayout>
+  <div>
+    <div class="h-[320px]">
+      <div
+        class="container h-full mx-auto px-4 flex items-center justify-between"
+      >
+        <h1 class="text-6xl font-bold tracking-wide text-slate-500">
+          TypeScript
+        </h1>
+        <div>
+          <Image
+            src={tsLogo}
+            width={256}
+            aspectRatio="1:1"
+            alt="TypeScript"
+            class="w-[200px]"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container px-4 mx-auto">
+        <ul>
+          {
+            allTypeScriptPosts.map((post) => {
+              const {
+                slug,
+                data: { title, publishedAt },
+              } = post;
+
+              return (
+                <li>
+                  <a
+                    href={`/typescript/${slug}`}
+                    class="bg-white rounded-lg p-8 block"
+                  >
+                    <time
+                      datetime={publishedAt}
+                      class="text-slate-500 tracking-wide"
+                    >
+                      {publishedAt.toLocaleDateString()}
+                    </time>
+                    <p class="text-2xl mt-2 text-slate-600 font-semibold tracking-normal">
+                      {title}
+                    </p>
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
