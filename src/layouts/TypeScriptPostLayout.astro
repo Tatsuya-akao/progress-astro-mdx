@@ -4,5 +4,11 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout pageTitle={title}>
-  <slot />
+  <div class="flex-grow py-28 px-8">
+    <div class="pt-32 pb-28 mx-auto max-w-[1100px] px-8 bg-white rounded-lg">
+      <div class="mx-auto max-w-[900px]">
+        <slot />
+      </div>
+    </div>
+  </div>
 </BaseLayout>

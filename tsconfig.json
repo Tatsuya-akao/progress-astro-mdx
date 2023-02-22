@@ -7,7 +7,7 @@
       "@img/*": ["src/assets/img/*"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
+    "jsxImportSource": "react",
     "strictNullChecks": true
   }
 }

@@ -45,51 +45,43 @@ const pageTitle = "Home Page";
       <p class="text-slate-500 text-center mt-6 font-medium tracking-wide">
         This is an app for keeping track of my daily progress.
       </p>
+    </div>
 
-      <div
-        class="grid place-content-center justify-items-center items-center mt-12"
-        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));"
-      >
-        <div class="aspect-square p-4">
-          <Tile name="TypeScript">
-            <Image
-              src={tsLogo}
-              width={256}
-              aspectRatio="1:1"
-              alt="TypeScript"
-            />
-          </Tile>
-        </div>
-        <div class="aspect-square p-4">
-          <Tile name="Workout">
-            <Image
-              src={workoutLogo}
-              width={256}
-              aspectRatio="1:1"
-              alt="Workout"
-            />
-          </Tile>
-        </div>
-        <div class="aspect-square p-4">
-          <Tile name="Reading">
-            <Image
-              src={readingLogo}
-              width={256}
-              aspectRatio="1:1"
-              alt="Reading"
-            />
-          </Tile>
-        </div>
-        <div class="aspect-square p-4">
-          <Tile name="Blogging">
-            <Image
-              src={bloggingLogo}
-              width={256}
-              aspectRatio="1:1"
-              alt="Blogging"
-            />
-          </Tile>
-        </div>
+    <div class="flex justify-center mt-12">
+      <div class="aspect-square p-4">
+        <Tile name="TypeScript" url="typescript">
+          <Image src={tsLogo} width={100} aspectRatio="1:1" alt="TypeScript" />
+        </Tile>
+      </div>
+      <div class="aspect-square p-4">
+        <Tile name="Workout" url="workout">
+          <Image
+            src={workoutLogo}
+            width={100}
+            aspectRatio="1:1"
+            alt="Workout"
+          />
+        </Tile>
+      </div>
+      <div class="aspect-square p-4">
+        <Tile name="Reading" url="reading">
+          <Image
+            src={readingLogo}
+            width={100}
+            aspectRatio="1:1"
+            alt="Reading"
+          />
+        </Tile>
+      </div>
+      <div class="aspect-square p-4">
+        <Tile name="Blogging" url="blogging">
+          <Image
+            src={bloggingLogo}
+            width={100}
+            aspectRatio="1:1"
+            alt="Blogging"
+          />
+        </Tile>
       </div>
     </div>
   </div>

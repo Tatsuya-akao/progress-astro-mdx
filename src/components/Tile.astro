@@ -1,9 +1,9 @@
 ---
-const { name } = Astro.props;
+const { name, url } = Astro.props;
 ---
 
 <a
-  href="/"
+  href={url}
   class="block p-10 bg-white rounded-xl border-2 border-slate-300 hover:border-[#3178c6] aspect-square relative text-slate-500 hover:text-[#3178c6] duration-300"
 >
   <div class="-translate-y-2">
